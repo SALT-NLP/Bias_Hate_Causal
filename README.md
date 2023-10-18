@@ -1,6 +1,7 @@
 # 📜 Mitigating Biases in Hate Speech Detection from A Causal Perspective
 
 🔍 This is the official code and data repository for the EMNLP 2023 findings paper titled "Mitigating Biases in Hate Speech Detection from A Causal Perspective".
+Authors: [Zhehao Zhang](https://zzh-sjtu.github.io/zhehaozhang.github.io/), [Jiaao Chen](https://cs.stanford.edu/people/jiaaoc/), [Diyi Yang](https://cs.stanford.edu/~diyiy/)
 
 ## 🌟 Abstract
 
