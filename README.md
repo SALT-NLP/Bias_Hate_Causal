@@ -1,8 +1,8 @@
-# Mitigating Biases in Hate Speech Detection from A Causal Perspective
+# 📜 Mitigating Biases in Hate Speech Detection from A Causal Perspective
 
-This is the official code and data repository for the EMNLP 2023 findings paper titled "Mitigating Biases in Hate Speech Detection from A Causal Perspective".
+🔍 This is the official code and data repository for the EMNLP 2023 findings paper titled "Mitigating Biases in Hate Speech Detection from A Causal Perspective".
 
-## Abstract
+## 🌟 Abstract
 
 <details><summary>Abstract</summary>
 
