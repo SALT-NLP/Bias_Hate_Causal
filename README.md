@@ -12,5 +12,22 @@ Experiments conducted on 9 hate speech datasets demonstrate the effectiveness of
 
 </details>
 
-## Folder Structure
+## 📂 Folder Structure
 
+- Folder Descriptions
+
+## 📊 Data Description
+
+📥 **Download Data**: [Download Link]
+- Data Specifications
+
+## 🚀 How to Run
+
+### 🧠 Multi-Task Intervention (MTI)
+- Instructions for MTL
+
+### 🌐 Data-Specific Intervention (DSI)
+- Instructions for DSL
+
+### ❗ Hate Speech Detection
+- Instructions for Hate Speech Detection
