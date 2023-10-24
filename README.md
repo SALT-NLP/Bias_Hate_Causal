@@ -33,7 +33,7 @@ All datasets are sourced from [hatespeechdata.com](https://hatespeechdata.com/).
 ## 🚀 How to Run
 
 ### 🧠 Multi-Task Intervention (MTI)
-- Instructions for MTL
+- For the Multi-Task Intervention, we utilize the masked language modeling approach. The implementation is adopted from the code provided in the [Hugging Face documentation on Masked Language Modeling](https://huggingface.co/docs/transformers/tasks/masked_language_modeling).
 
 ### 🌐 Data-Specific Intervention (DSI)
 - Instructions for DSL
