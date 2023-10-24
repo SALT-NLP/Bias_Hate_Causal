@@ -18,9 +18,18 @@ Experiments conducted on 9 hate speech datasets demonstrate the effectiveness of
 
 ## 📊 Data Description
 
-📥 **Download Data**: [Download Link]
-- Data Specifications
+All datasets are sourced from [hatespeechdata.com](https://hatespeechdata.com/).
 
+📥 **Download Data**:
+- **Multimodal Meme Dataset**: [Download](https://github.com/bharathichezhiyan/Multimodal-Meme-Classification-Identifying-Offensive-Content-in-Image-and-Text)
+- **Hate Speech Dataset from a White Supremacist Forum**: [Download](https://github.com/Vicomtech/hate-speech-dataset)
+- **Fox News User Comments**: [Download](https://github.com/sjtuprog/fox-news-comments)
+- **HASOC19**: [Download](https://hasocfire.github.io/hasoc/2019/dataset.html)
+- **ETHOS**: [Download](ETHOS)
+- **Twitter Sentiment Analysis**: [Download](https://www.kaggle.com/datasets/arkhoshghalb/twitter-sentiment-analysis-hatred-speech)
+- **Anatomy of Online Hate**: [Download](https://www.dropbox.com/s/21wtzy9arc5skr8/ICWSM18%20-%20SALMINEN%20ET%20AL.xlsx?dl=0)
+- **Hate Speech on Twitter**: [Download](https://github.com/ziqizhang/data)
+- **Hate-Offensive (AHS)**: [Download](https://github.com/t-davidson/hate-speech-and-offensive-language#automated-hate-speech-detection-and-the-problem-of-offensive-language)
 ## 🚀 How to Run
 
 ### 🧠 Multi-Task Intervention (MTI)
