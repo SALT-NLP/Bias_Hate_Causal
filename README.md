@@ -33,7 +33,29 @@ All datasets are sourced from [hatespeechdata.com](https://hatespeechdata.com/).
 ## 🚀 How to Run
 
 ### 🧠 Multi-Task Intervention (MTI)
-- For the Multi-Task Intervention, we utilize the masked language modeling approach. The implementation is adopted from the code provided in the [Hugging Face documentation on Masked Language Modeling](https://huggingface.co/docs/transformers/tasks/masked_language_modeling).
+- For the Multi-Task Intervention, we utilize two methods: masked language modeling (MLM) and multi-task learning (MTL). The implementation of MLM is adopted from the code provided in the [Hugging Face documentation on Masked Language Modeling](https://huggingface.co/docs/transformers/tasks/masked_language_modeling).
+#### Running the Masked Language Modeling
+
+To execute the script, use the command below:
+```
+python masked_LM.py [arguments]
+```
+##### Arguments
+
+- `--device`: Specifies the device to use (e.g., 'cuda' or 'cpu'). Defaults to 'cuda' if available, else 'cpu'.
+- `--model_checkpoint`: The model checkpoint for initialization. Default value is 'bert-base-cased'.
+- `--output_dir`: The directory where the trained model will be saved. Default is set to 'MLM_large_corpus'.
+- `--evaluation_strategy`: Specifies the evaluation strategy. The default strategy is 'epoch'.
+- `--learning_rate`: Learning rate for training. Default value is 2e-5.
+- `--weight_decay`: Weight decay during training. Default value is 0.01.
+- `--train_batch_size`: Size of the batch during training. Default value is 64.
+- `--eval_batch_size`: Batch size during evaluation. Default is set to 64.
+- `--fp16`: Flag to enable half precision training. Set to False by default.
+- `--datasets`: Comma-separated list of dataset names to be used. This argument is mandatory.
+- `--logging_divisor`: Determines the logging frequency. Logs will be generated every `len(train_data) // logging_divisor` steps. The default value is 4.
+- `--num_epochs`: Number of epochs for training. Default value is 5.
+- `--save_strategy`: Strategy employed for model saving. Default is 'epoch'.
+
 
 ### 🌐 Data-Specific Intervention (DSI)
 - Instructions for DSL
