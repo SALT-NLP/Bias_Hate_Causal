@@ -56,6 +56,10 @@ python masked_LM.py [arguments]
 - `--num_epochs`: Number of epochs for training. Default value is 5.
 - `--save_strategy`: Strategy employed for model saving. Default is 'epoch'.
 
+#### Running the Multi-Task Learning
+
+You can simply concatenate the 9 datasets above and randomly shuffle the large dataset before input it to the basic classification pipeline.
+
 
 ### 🌐 Data-Specific Intervention (DSI)
 - Instructions for DSL
