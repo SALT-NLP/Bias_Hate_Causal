@@ -58,11 +58,24 @@ python masked_LM.py [arguments]
 
 #### Running the Multi-Task Learning
 
-You can simply concatenate the 9 datasets above and randomly shuffle the large dataset before input it to the basic classification pipeline.
+You can simply concatenate the 9 datasets above and randomly shuffle the large dataset before inputting it into the basic classification pipeline.
 
 
 ### 🌐 Data-Specific Intervention (DSI)
-- Instructions for DSL
+- To perform DSI, we should first mitigate two types of correlations described in Section 3.1: Token-level Spurious Correlations and Sentence-level Spurious Correlations,
+
+#### Finding Token-level Spurious Correlations
+
+```
+python token_bias.py [arguments]
+```
+##### Arguments
+
+- `--data_file`: Specifies the dataset file path.
+- `--tokenizer`: The tokenizer that you want to use. We use the simple word tokenizer in this work.
+
+
+#### Finding Sentence-level Spurious Correlations
 
 ### ❗ Hate Speech Detection
 - Instructions for Hate Speech Detection
