@@ -77,5 +77,15 @@ python token_bias.py [arguments]
 
 #### Finding Sentence-level Spurious Correlations
 
+To find the Sentence-level Spurious Correlations, we follow a previous work (Finding Dataset Shortcuts with Grammar Induction EMNLP2022) and utilize the code from the original GitHub repository at [ShortcutGrammar](https://github.com/princeton-nlp/ShortcutGrammar). 
+
+To integrate this into your workflow:
+
+1. **PCFG Grammar Induction**:
+    - Begin by using the hate speech data to perform PCFG (Probabilistic Context-Free Grammar) grammar induction. This can be done using the scripts (src/run.py) provided in the repository above.
+
+2. **Visualizing Sentence-level Biases**:
+    - Once you have obtained the output grammar from the PCFG grammar induction, you can use the `sentence_bias.ipynb` notebook to visualize and analyze the sentence-level biases in the data.
+
 ### ❗ Hate Speech Detection
 - Instructions for Hate Speech Detection
