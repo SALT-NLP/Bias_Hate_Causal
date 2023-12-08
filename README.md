@@ -1,6 +1,6 @@
 # 📜 Mitigating Biases in Hate Speech Detection from A Causal Perspective
 
-🔍 This is the official code and data repository for the EMNLP 2023 findings paper titled "Mitigating Biases in Hate Speech Detection from A Causal Perspective".
+🔍 This is the official code and data repository for the EMNLP 2023 findings paper titled ["Mitigating Biases in Hate Speech Detection from A Causal Perspective"](https://aclanthology.org/2023.findings-emnlp.440/).
 Authors: [Zhehao Zhang](https://zzh-sjtu.github.io/zhehaozhang.github.io/), [Jiaao Chen](https://cs.stanford.edu/people/jiaaoc/), [Diyi Yang](https://cs.stanford.edu/~diyiy/)
 
 ## 🌟 Abstract
@@ -11,10 +11,6 @@ Nowadays, many hate speech detectors are built to automatically detect hateful c
 Experiments conducted on 9 hate speech datasets demonstrate the effectiveness of our approaches.
 
 </details>
-
-## 📂 Folder Structure
-
-- Folder Descriptions
 
 ## 📊 Data Description
 
@@ -87,5 +83,73 @@ To integrate this into your workflow:
 2. **Visualizing Sentence-level Biases**:
     - Once you have obtained the output grammar from the PCFG grammar induction, you can use the `sentence_bias.ipynb` notebook to visualize and analyze the sentence-level biases in the data.
 
-### ❗ Hate Speech Detection
-- Instructions for Hate Speech Detection
+After that you can generate counterfactual data according to the prompt design in A.4 using an LLM.
+
+### Classification pipeline
+- After combine the counterfactual data with the original dataset and get the model checkpoint after MTI, we can use the following code to do the hate speech detection (formulated as a binary classification problem).
+
+#### Training the Hate Speech Detection Model
+
+To train the hate speech detection model, use the following script:
+
+```
+python classification.py [arguments]
+```
+
+##### Arguments
+
+- `--seed`: Seed for random number generation to ensure reproducibility. Default is 60.
+- `--epoch`: Number of training epochs. Default is 3.
+- `--bz`: Batch size for training and evaluation. Default is 10.
+- `--data`: The dataset to be used. It should be the same as the folder name.
+- `--lr`: Learning rate for the optimizer. Default is 2e-5.
+- `--wd`: Weight decay for the optimizer. Default is 0.
+- `--norm`: Max gradient norm for gradient clipping. Default is 0.8.
+- `--gpu`: GPU device ID for CUDA_VISIBLE_DEVICES. Default is '6'.
+- `--model_checkpoint`: Pretrained model checkpoint for initialization. Default is "bert-base-cased". You can change it to the model after MTI to get the best performance."
+
+##### 🔧 Hyperparameter Tuning with Weights & Biases (wandb)
+
+Utilize Weights & Biases for hyperparameter tuning by defining and running a wandb sweep in your script. Configure the sweep with your desired parameters, such as learning rate and batch size, and use wandb's dashboard to monitor and analyze the results. Detailed instructions and examples can be found in the [official wandb documentation](https://docs.wandb.ai/).
+
+
+#### Evaluating the Model
+
+Once the model is trained, you can evaluate its performance on the test set using the metrics like accuracy, micro-F1, and macro-F1 scores. The evaluation is automatically done at the end of the training script and the results are displayed.
+
+#### Saving and Loading Models
+
+- The trained model can be saved using PyTorch's `save_pretrained` method and can be loaded using `from_pretrained` for further analysis or deployment.
+
+### 📝 Citation
+
+If you find our work useful, please consider citing our paper:
+
+```bibtex
+@inproceedings{zhang-etal-2023-mitigating,
+    title = "Mitigating Biases in Hate Speech Detection from A Causal Perspective",
+    author = "Zhang, Zhehao  and
+      Chen, Jiaao  and
+      Yang, Diyi",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2023",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-emnlp.440",
+    pages = "6610--6625",
+    abstract = "Nowadays, many hate speech detectors are built to automatically detect hateful content. However, their training sets are sometimes skewed towards certain stereotypes (e.g., race or religion-related). As a result, the detectors are prone to depend on some shortcuts for predictions. Previous works mainly focus on token-level analysis and heavily rely on human experts{'} annotations to identify spurious correlations, which is not only costly but also incapable of discovering higher-level artifacts. In this work, we use grammar induction to find grammar patterns for hate speech and analyze this phenomenon from a causal perspective. Concretely, we categorize and verify different biases based on their spuriousness and influence on the model prediction. Then, we propose two mitigation approaches including Multi-Task Intervention and Data-Specific Intervention based on these confounders. Experiments conducted on 9 hate speech datasets demonstrate the effectiveness of our approaches.",
+}
+```
+## ✉️ Contact Information
+
+For any inquiries or further information regarding this project, feel free to reach out to the leading author:
+
+- **Zhehao Zhang**: [zhehao.zhang.gr@dartmouth.edu](mailto:zhehao.zhang.gr@dartmouth.edu) | [Website](https://zzh-sjtu.github.io/zhehaozhang.github.io/)
+
+We welcome questions, feedback, and collaboration requests!
+
+
